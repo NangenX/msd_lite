@@ -44,7 +44,6 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #include "utils/macro.h"
 #include "utils/sys.h"
@@ -333,8 +332,10 @@ static const char *admin_html =
 "        </div>"
 "        <div class=\"card\">"
 "            <h3>Memory</h3>"
-"            <div class=\"value\" id=\"mem-val\">0 MB</div>"
-"            <div class=\"sub-value\" id=\"mem-total\">of 0 MB</div>"
+"            <div style=\"display: flex; align-items: baseline;\">"      /* 使用 Flex 布局 */
+"                <div class=\"value\" id=\"mem-val\">0 MB</div>"
+"                <div class=\"sub-value\" id=\"mem-total\" style=\"margin-left: 8px;\">/ 0 MB</div>"
+"            </div>"
 "            <div class=\"progress-bg\"><div class=\"progress-bar\" id=\"mem-bar\" style=\"width: 0%; background: #9c27b0;\"></div></div>"
 "        </div>"
 "        <div class=\"card\">"
